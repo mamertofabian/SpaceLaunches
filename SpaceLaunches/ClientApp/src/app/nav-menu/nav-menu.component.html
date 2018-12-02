@@ -1,0 +1,22 @@
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <a class='navbar-brand' [routerLink]='["/"]'>Space Launches</a>
+        </div>
+        <div class='clearfix'></div>
+        <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+            <ul class='nav navbar-nav'>
+              <li [routerLinkActive]='["link-active"]'>
+                <a [routerLink]='["/next-launch"]' (click)='collapse()'>
+                  <i class="fa fa-calendar"></i> Next 5 Launches
+                </a>
+              </li>
+              <li [routerLinkActive]='["link-active"]'>
+                  <a [routerLink]='["/rockets"]' (click)='collapse()'>
+                    <i class="fa fa-rocket"></i> 5 Rockets
+                  </a>
+              </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<h1><i class="fa fa-rocket"></i> 5 Rockets</h1>
+
+<p>Here are some random rockets with image.</p>
+
+<p *ngIf="!rocketList"><em>Loading...</em></p>
+
+<table class='table' *ngIf="rocketList">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Default Pads</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rocket of rocketList.rockets">
+      <td>{{ rocket.id }}</td>
+      <td><a href="{{ rocket.wikiUrl }}" target="_blank">{{ rocket.name }} <i class="fa fa-external-link"></i></a></td>
+      <td>{{ rocket.defaultPads}}</td>
+      <td><a href="{{ rocket.imageUrl }}" target="_blank">
+        <img src="{{ rocket.smallImageUrl }}" alt="{{ rocket.name }}" class="thumbnail" /></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

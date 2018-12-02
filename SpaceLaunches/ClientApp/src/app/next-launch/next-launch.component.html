@@ -1,0 +1,26 @@
+<h1><i class="fa fa-calendar"></i> Next 5 Launches</h1>
+
+<p>Here are the next 5 launches.</p>
+
+<p *ngIf="!launchList"><em>Loading...</em></p>
+
+<table class='table' *ngIf="launchList">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Window Start</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let launch of launchList.launches">
+      <td>{{ launch.id }}</td>
+      <td>{{ launch.name }}</td>
+      <td>{{ launch.location.name }}</td>
+      <td>{{ launch.windowStart }}</td>
+      <td>{{ launch.statusName }}</td>
+    </tr>
+  </tbody>
+</table>
